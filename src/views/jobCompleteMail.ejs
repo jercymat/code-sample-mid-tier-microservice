@@ -1,0 +1,48 @@
+<h3>Job Complete Confirmation - Date: <%= date %></h3>
+<h4>Uploaded Certificates</h4>
+<p>The following certificates have been successfully uploaded</p>
+<ul>
+  <% uploaded_certs.forEach(function(cert) { %>
+  <li><%= cert %></li>
+  <% }); %>
+</ul>
+<h4>Added Customers</h4>
+<p>The following customers have been successfully uploaded</p>
+<ul>
+  <% uploaded_custs.forEach(function(cust) { %>
+  <li><%= cust %></li>
+  <% }); %>
+</ul>
+<% if(failed) { %>
+<p><br />&nbsp;</p>
+<p style="color: red">
+  <strong>UPLOAD JOB ENDED WITH PARTIAL FAILURES</strong>
+</p>
+<% if(invalid_filenames.length > 0) { %>
+<h4>Invalid Certificate File Names</h4>
+<p>
+  The following certificates have invalid file names from which we failed to
+  extract customer data from them.
+</p>
+<ul>
+  <% invalid_filenames.forEach(function(fn) { %>
+  <li><%= fn %></li>
+  <% }); %>
+</ul>
+<% } %> <% if(upload_fail_certs.length > 0) { %>
+<h4>Upload Failed Certificates</h4>
+<p>The following certificates failed to be uploaded</p>
+<ul>
+  <% upload_fail_certs.forEach(function(cert) { %>
+  <li><%= cert %></li>
+  <% }); %>
+</ul>
+<% } %> <% if(upload_fail_custs.length > 0) { %>
+<h4>Upload Failed Customer Data</h4>
+<p>The following customer data failed to be added</p>
+<ul>
+  <% upload_fail_custs.forEach(function(cust) { %>
+  <li><%= cust %></li>
+  <% }); %>
+</ul>
+<% } %> <% } %>

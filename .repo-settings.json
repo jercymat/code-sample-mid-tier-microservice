@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "org": "%org_name%",
+    "team": "%team_name%",
+    "email": "%owner_email%",
+    "githubAdmins": []
+  },
+  "security": {
+    "dataClassification": "confidential",
+    "complianceClassification": "pci",
+    "snyk": {
+      "org": "%org_name%",
+      "debug": false,
+      "block": "false",
+      "devBranch": "dev"
+    }
+  },
+  "tech": {
+    "repoType": "microservice",
+    "namespace": "%namespace",
+    "deployLocations": ["%deploy_location%"]
+  },
+  "%team_name%": {
+    "costcenter": "%cost_center%"
+  },
+  "itsm": {
+    "application": "code-sample-mid-tier-microservice",
+    "email": "%owner_email%"
+  }
+}
